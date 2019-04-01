@@ -12,9 +12,10 @@
     "typescript": "^3.4.1"
   },
   "scripts": {
+    "sass":"sass src/sass:build --watch",
     "tsc":"tsc --watch",
     "nodemon":"nodemon build/js/main.js",
-    "build-js":"concurrently \"yarn run tsc \" \"yarn run nodemon\""
+    "build-js":"concurrently \"yarn run tsc \" \"yarn run nodemon\" \"yarn run sass\""
   },
   "dependencies": {}
 }
