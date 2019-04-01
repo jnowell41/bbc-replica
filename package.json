@@ -1,0 +1,8 @@
+{
+  "name": "news-style-website",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/jnowell41/news-style-website.git",
+  "author": "James Nowell",
+  "license": "MIT"
+}
