@@ -6,16 +6,19 @@
   "author": "James Nowell",
   "license": "MIT",
   "devDependencies": {
+    "browserify": "^16.2.3",
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10",
     "sass": "^1.17.3",
-    "typescript": "^3.4.1"
+    "typescript": "^3.4.1",
+    "watchify": "^3.11.1"
   },
   "scripts": {
-    "sass":"sass src/sass:build --watch",
-    "tsc":"tsc --watch",
-    "nodemon":"nodemon build/js/main.js",
-    "build-js":"concurrently \"yarn run tsc \" \"yarn run nodemon\" \"yarn run sass\""
+    "sass": "sass src/sass:build --watch",
+    "bundle":"watchify build/js/main.js -o build/bundle.js",
+    "tsc": "tsc --watch",
+    "nodemon": "nodemon build/js/main.js",
+    "build-js": "concurrently \"yarn run tsc \" \"yarn run sass\" \"yarn run bundle\""
   },
   "dependencies": {}
 }

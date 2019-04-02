@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Walsallion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../build/main.css">
-    <script src="../build/js/main.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+        crossorigin="anonymous"></script>
+    <script async src="../build/bundle.js"></script>
 </head>
+
 <body>
-    Hello World!
+    <nav>
+        <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/BBC.svg" /></div>
+        <div id="menu" class="menu">
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>News</a></li>
+                <li><a>Sport</a></li>
+                <li><a>Weather</a></li>
+                <li><a>iPlayer</a></li>
+                <li><a>Sounds</a></li>
+                <li><a>CBBC</a></li>
+            </ul>
+        </div>
+        <div id="dropdown" class="dropdown" onclick="refinedReveal()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <article class = "main-header">
+        <header>
+            NEWS
+        </header>
+    </article>
+    <main>
+    <div id="container">
+    </div>
+    </main>
 </body>
+
 </html>
