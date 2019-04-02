@@ -21,7 +21,7 @@ nav {
     display:flex;
     justify-content: space-between;
     align-items: center;
-
+    
     img {
         height:$navHeight;
         padding: $cs 0 $cs $cs;
@@ -38,29 +38,29 @@ nav {
         right:$cs;
         display:none;
         -webkit-transition:0.3s ease-in-out;
-
+        
         ul {
             display:flex;
             justify-content: flex-start;
             align-items:center;
             height:$navHeight;
-
-        li {
-            list-style: none;
-            padding:0 $cs-xs 0 $cs-xs;
-            height:$navHeight;
-            border-bottom: 2px solid rgba(59, 59, 145, 0);
-            border-left:1px solid rgba(128, 128, 128, 0.808);
-            display:flex;
-            align-items: center;
-
-            &:hover {
-                border-bottom: 2px solid $navColor;
-                cursor: pointer;
-
+            
+            li {
+                list-style: none;
+                padding:0 $cs-xs 0 $cs-xs;
+                height:$navHeight;
+                border-bottom: 2px solid rgba(59, 59, 145, 0);
+                border-left:1px solid rgba(128, 128, 128, 0.808);
+                display:flex;
+                align-items: center;
+                
+                &:hover {
+                    border-bottom: 2px solid $navColor;
+                    cursor: pointer;
+                    
+                }
             }
         }
-    }
     }
     .not_hidden {
         display:block;
@@ -72,7 +72,7 @@ nav {
     width:100vw;
     height:$navHeight;
     background-color: $navColor;
-
+    
     header {
         padding: 0 0 0 $cs;
         font-size:2em;
@@ -84,34 +84,40 @@ main {
     padding:$cs;
     display:flex;
     flex-direction:column;
-
+    
     #container {
         display:grid;
         grid-template-columns: 1fr;
         grid-column-gap: $cs-lg;
-
-    article {
-        background-color:pink;
-        margin-bottom: $cs-lg;
-
+        
+        article {
+            margin-bottom: $cs-lg;
+            
             header {
                 font-weight: 600;
                 padding:$cs-xs;
             }
-
-            img {
-                width:100%;
-                }
-
-                .description {
-                    padding:$cs;
-                    font-size:0.8em;
-                }
+            span {
+                padding:$cs-xs;
+                font-size:0.8em;
             }
-
+            
+            .image {
+                height:200px;
+                background-size: cover;
+                background-position:center;
+                background-repeat: no-repeat;
+            }
+            
+            .description {
+                padding:$cs;
+                font-size:0.8em;
+            }
         }
-
-        }
+        
+    }
+    
+}
 
 @media only screen and (min-width: 850px) {
     nav {
@@ -120,14 +126,14 @@ main {
             text-align: left;
             padding: 0 0 0 $cs;
             width:90%;
-
+            
             li {
                 display:inline-block;
                 padding: 0 $cs-xs 0 $cs-xs;
             }
         }
     }
-    #container {
-        grid-template-columns: 1fr 1fr;
-    }
+    main {    #container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }}
 }

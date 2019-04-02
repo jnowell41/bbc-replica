@@ -1,23 +1,22 @@
 import data from './newsData';
 
-const reveal = (): void => {
-    const menu = document.getElementById("menu");
-    menu.style.display == "none" ? menu.style.display = "block" : menu.style.display = "none";
-};
+// const reveal = (): void => {
+//     const menu = document.getElementById("menu");
+//     menu.style.display == "none" ? menu.style.display = "block" : menu.style.display = "none";
+// };
 
 // const refinedReveal = () => {
 //     const menu = document.getElementById("menu").classList.toggle("not_hidden");
 // };
 
-// (<any>window).refinedReveal = (e: MouseEvent) => {
-//     e.preventDefault();
-//     document.getElementById("menu").classList.toggle("not_hidden");
-// }
-// const getTime = ():void => {
-//     var date:string = new Date().toLocaleTimeString();
-//     document.getElementById("time-stamp").innerHTML=date;
-// };
-// getTime();
+(<any>window).refinedReveal = (e: MouseEvent) => {
+    e.preventDefault();
+    document.getElementById("menu").classList.toggle("not_hidden");
+}
+const getTime = (date:string):string => {
+    let dateObject = new Date(date);
+    return dateObject.toLocaleDateString();
+};
 
 interface INewsData {
     status: string;
@@ -42,21 +41,18 @@ interface IArticleData {
 const newsData: INewsData = data;
 
 
-const addToPage = () => {
+const addToPage = (article:IArticleData) => {
     let html = `<article>
-    <img src="http://www.placekitten.com/600/400" alt="a cat" />
-    <header>Intoxicated cat steals JCB, ploughs into local town hall</header>
-    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-        qui officia deserunt mollit anim id est laborum.</div>
+    <div class="image" style="background-image:url('${(article.urlToImage) ? article.urlToImage=article.urlToImage : article.urlToImage="../../placeholder-image.jpg"}')"></div>
+    <header>${article.title}</header>
+    <span>${getTime(article.publishedAt)}</span>
+    <div class="description">${article.description}</div>
 </article>`
-    document.getElementById("container").innerHTML = html;   
+    document.getElementById("container").innerHTML += html;   
 }
 
-addToPage();
+// addToPage();
 
-// newsData.articles.forEach(element => {
-//     addToPage(element;)
-// });
+newsData.articles.forEach(element => {
+    addToPage(element)
+});

@@ -86,15 +86,21 @@ main #container {
   grid-column-gap: 20px;
 }
 main #container article {
-  background-color: pink;
   margin-bottom: 20px;
 }
 main #container article header {
   font-weight: 600;
   padding: 5px;
 }
-main #container article img {
-  width: 100%;
+main #container article span {
+  padding: 5px;
+  font-size: 0.8em;
+}
+main #container article .image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main #container article .description {
   padding: 10px;
@@ -113,8 +119,8 @@ main #container article .description {
     padding: 0 5px 0 5px;
   }
 
-  #container {
-    grid-template-columns: 1fr 1fr;
+  main #container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
